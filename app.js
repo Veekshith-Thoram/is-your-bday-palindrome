@@ -82,7 +82,7 @@ function getNextDate(date){
     }
     if(month>12){
         month =1;
-        year++
+        year++;
     }
 
     return {
@@ -162,13 +162,6 @@ function getPreviousPalindromeDate(date){
     return [ctr,previousDate];
 }
 
-
-// var date = {
-//     day: 10,
-//     month: 6,
-//     year: 2001
-// }
-
 function checkPallindrome(){
     var bdayStr = dateOfBirth.value;
     if(bdayStr !== ""){
@@ -183,12 +176,7 @@ function checkPallindrome(){
             outputEl.innerText = "Yay!! Your birthday is a Perfect Palindrome date🤩🤩"
         } else{
             var [ctr, nextDate] = getNextPalindromeDate(date);
-            var [ptr, previousDate] = getPreviousPalindromeDate(date);
-            if(ctr<ptr){
-                outputEl.innerText = `The next pallindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year} and you missed it by ${ctr} days`
-            } else{
-                outputEl.innerText = `The previous pallindrome date is ${previousDate.day}-${previousDate.month}-${previousDate.year} and you missed it by ${ptr} days`
-            }
+            outputEl.innerText = `The next pallindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year} and you missed it by ${ctr} days`;
         }
     } else{
         outputEl.innerText = "Please input Your Date of birth to proceed.."
